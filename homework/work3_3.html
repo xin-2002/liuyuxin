@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">随机点名</div>
+		<span id="span">开始</span>
+		<style>
+			#box{
+				width: 30%;
+				height: 200px;
+				line-height: 200px;
+				background-color: burlywood;
+				border: 3px solid saddlebrown;
+				font-size: 40px;
+				font-weight: 600;
+				font-family: "arial, helvetica, sans-serif";
+				text-align: center;
+				margin: 35px auto;
+				border-radius: 10px;
+			}
+			#span{
+				display: block;
+				width: 30%;
+				height: 44px;
+				line-height: 44px;
+				background-color: navajowhite;
+				border: 3px solid saddlebrown;
+				border-radius: 10px;
+				text-align: center;
+				margin: 0 auto;
+				font-size: 18px;
+				font-family: "微软雅黑";				
+			}
+			span:hover{
+				background-color: rgb(4,190,76);
+			}
+		</style>
+		<script>
+			var arr=["李福铭","谢汶均","梁晋源","陈永富","高彩滢","李达育","陈绮媚","林冠",
+					"区家玮","刘文敬","麦春影","李展锐","许贵诚","冯国韬","戴大嘉","罗婷","高广睿",
+					"郑亿程","郭杰锋","吕鑫","刘志成","王耿龙","林建军","曾澳","龙浩添","吴沅蔚",
+					"刘振绍","陈幸","刘培滨","吴伟灏","杨富棋","胡泳豪","余锦涛","陈静飞","罗景日",
+					"刘景权","莫景树","孔婕妤","欧铭烨","林小莲","苏华富","沈廷阳","罗颖莹","吴冬梅",
+					"陈锋亮","李师华","何东就","林泳志","张泽扬","张霜霜","朱景滔","赵凯","莫镇权",
+					"罗树贤","蔡春智","李宇翀","李增荣","梁东升","肖瑜丽","刘堉昕","李子瑶","周淼",
+					"陈莉莉","焦赟","张月婷","陈妹","李丹娜","罗莹","张利涛"];
+			var box = document.getElementById("box");
+			var span = document.getElementById("span");
+			var state = 0;
+			var t;
+			span.onclick = function(){
+				if(state == 0){
+					clearInterval(t);
+					t = setInterval(function(){
+						var xz = Math.round(Math.random()*(arr.length-1));
+						console.log(arr[xz]);
+						box.innerHTML = arr[xz];
+					},3)
+					span.innerHTML = "结束";
+					state = 1;
+				}else{
+					state=0;
+					clearInterval(t);
+					span.innerHTML = "开始";
+				}
+			}
+		</script>
+	</body>
+</html>
+

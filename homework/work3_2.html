@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function getRandom(min,max){
+				return Math.floor(Math.random()*(max-min+1)+min);
+			}
+			var random = getRandom(1,100);
+			alert("猜数字游戏，范围在1~100之间，你有10次机会。");
+			var n = 10;
+			while (n>0){
+				alert("你现在有"+n+"次机会");
+				var num = prompt("请输入一个数字：");
+				if(num>random){
+					alert("你猜大了！");
+					n--;
+				}else if(num<random){
+					alert("你猜小了！");
+					n--;
+				}else{
+					alert("恭喜你，猜对了，数字是"+random+"！");
+					break;
+				}
+				
+			}
+		</script>
+	</body>
+</html>

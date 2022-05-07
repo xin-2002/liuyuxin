@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function yingxiong(n,t,b,a){
+				this.name = n;
+				this.type = t;
+				this.blood = b+'血量';
+				this.attack = a;
+			}
+			var lian = new yingxiong('廉颇','力量型','5000','近战');
+			var hou = new yingxiong('后羿','射手型','1000','远程');
+			var st1='';
+			var st2='';
+			for (var key in lian) {
+				st1 += lian[key]+' ';
+			}
+			for (var key in hou) {
+				st2 += hou[key]+' ';
+			}
+			console.log(st1);
+			console.log(st2);
+		</script>
+		
+	</body>
+</html>
